@@ -11,7 +11,8 @@ var Book2 = {
 console.log(Book2);
 
 function displayBook1Review() {
-  var queryURL = "http://idreambooks.com/api/books/reviews.json?q=" + Book1.title + "&key=36ecbc8d8618c9f56345cf3e322fa1355b25fc32"
+  //I changed the http to https below b/c of an insecure XMLHttpRequest error
+  var queryURL = "https://idreambooks.com/api/books/reviews.json?q=" + Book1.title + "&key=36ecbc8d8618c9f56345cf3e322fa1355b25fc32"
   console.log(queryURL);
   console.log(Book1.title);
   console.log(Book1.author);
