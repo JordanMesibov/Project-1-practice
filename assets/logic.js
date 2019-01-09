@@ -22,6 +22,12 @@ function displayBook1Review() {
   }).then(function(response) {
     console.log("The response to the ajax call is below");
     console.log(response);
+    $("#reviews-display").prepend(`iDreamBooks Rating: ${response.book.rating}%<br><br>`);
+    $("#reviews-display").append(response.book.critic_reviews[0].snippet);
+    $("#reviews-display").append(`<br><br>Source: ${response.book.critic_reviews[0].source}`);
+    var reviewLink = response.book.critic_reviews[0].review_link;
+    $("#reviews-display").append(`<br><br>To read on: `).append(reviewLink);
+    //Now I just need to figure out how to make the variable reviewLink get printed to the page as a link instead of plain text
   })
 
 
